@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROTOTYPE & INHERITANCE Problem Page...</h1>
+    <p>***Console Below***</p>
+</body>
+</html>
+<script>
+
+const fourwheeler = {
+    wheels:'four',
+    headlights: 2,
+    steering:1,
+    handbrake:1,
+    gear:1,
+    doors:'four',
+    windows:'four',
+    silencer:1,
+};
+
+const Innovo =Object.create(fourwheeler);
+Innovo.color = 'red';
+console.log(Innovo);
+
+const BMW =Object.create(fourwheeler);
+BMW.color = 'white';
+BMW.shape = 'scropio';
+console.log(BMW);
+
+
+//**** 
+
+// To Form with the help of construtor function;
+
+function basemodel(c){
+    this.wheels='four';
+    this.headlights='two';
+    this.steering='one';
+    this.handbrake='one';
+    this.color=c;
+}
+basemodel.prototype.price =function(){
+    console.log( "product price is 100000");
+    
+}
+
+let A = new basemodel('red');
+let B = new basemodel('blue');
+console.log(A,B);
+
+
+A.price();
+
+</script>
